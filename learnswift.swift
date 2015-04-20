@@ -1,6 +1,24 @@
 // 스위프트 언어에만 있는 특징 적인 것만을 기술 한다.
 
 /*
+변수 선언
+var
+
+상수 선언
+let
+
+문장의 종료;생략
+
+if,for 문 괄호 하지 않는다.
+
+문자열의 변수 출력 \(변수)
+"value is \(i)"
+
+
+*/
+
+
+/*
 1. 스위프트 옵셔널 타입
 선언 시에 ?
 참조 할때 !
@@ -59,3 +77,112 @@ var x =  10
 for index in 1 ... 20 {
     let y = index * x --
 }
+
+
+/* 
+반복문, 제어문
+for 범위 연산자
+for in 사용
+do ~ while, while은 c/c++ object-c와 유사
+if c/c++,object-c와 유사
+*/
+
+
+import UIKit
+
+for index in 1 ... 5 {
+    println("Value of index is \(index)")
+}
+
+/*
+Value of index is 1
+Value of index is 2
+Value of index is 3
+Value of index is 4
+Value of index is 5
+*/
+
+
+for char in "sparrow is ios developer" {
+    println(char)
+}
+/*
+s
+p
+a
+r
+r
+o
+w
+
+i
+s
+
+i
+o
+s
+
+d
+e
+v
+e
+l
+o
+p
+e
+r
+
+*/
+
+
+var count = 0
+
+for _ in "sparrow" {
+    ++count
+}
+/*
+7
+*/
+
+
+
+/* switch
+범위 연산자를 사용할수 있다.
+where 구문을 이용하여 부가적인 조건을 추가 할 수 있다. 
+break가 없어도 해당 case이후에 수행 하지 않는다. 
+기타 다른 언어 처럼 break가 없을 경우 아래에 case를 수행하기 위해서는 fallthrough를 이용한다.
+*/
+
+var temperature = 83
+switch ( temperature )
+{
+    case 0...49:
+        println ("cold")
+    
+    case 50...79:
+        println ("Warm")
+    
+    case 80...110:
+        println ("Hot")
+    
+    default:
+        println ("temperature out of range")
+}
+
+var temperature = 54
+switch ( temperature )
+{
+case 0...49 where temperature % 2 == 0:
+    println ("cold")
+    
+case 50...79 where temperature % 2 == 0:
+    println ("Warm")
+    
+case 80...110 where temperature % 2 == 0:
+    println ("Hot")
+    
+default:
+    println ("temperature out of range")
+}
+
+
