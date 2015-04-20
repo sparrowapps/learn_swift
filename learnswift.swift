@@ -44,3 +44,18 @@ let myTuple = ( count: 10, length : 11.33, message : "string" )
 println (myTuple.message)
 
 
+/*
+3. 범위 연산자
+x ... y
+
+x에서 시작하여 y로 끝나는 범위
+
+x ... <y
+x로부터 y가 포함되지 않는 모든 숫자
+
+
+*/
+var x =  10
+for index in 1 ... 20 {
+    let y = index * x --
+}
