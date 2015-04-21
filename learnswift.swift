@@ -208,6 +208,32 @@ func <함수명> (<매개변수명>: <매개변수타입>, <매개변수명>: <�
 }
 */
 
+func hello() {
+    println("hello")
+}
+
+hello()
+
+func makeMessage(name: String, old: Int) -> String {
+    return("\(name), you are old \(old)")
+}
+
+var message = makeMessage("sparrow", 29)
+
+func makeMessage(#name: String, #old: Int) -> String {
+    return("\(name), you are old \(old)")
+}
+
+var message = makeMessage(name: "Sparrow", old: 29)
+
+func makeMessage(YourName name: String, YourAge old: Int) -> String {
+    return("\(name), you are old \(old)")
+}
+
+var message = makeMessage(YourName: "sparrow", YourAge: 29)
+
+
+
 
 
 
