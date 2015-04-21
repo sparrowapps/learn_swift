@@ -232,6 +232,108 @@ func makeMessage(YourName name: String, YourAge old: Int) -> String {
 
 var message = makeMessage(YourName: "sparrow", YourAge: 29)
 
+// tuple return
+
+func lengthConverter ( #cm_length: Float ) -> (inchs: Float, yards: Float , ft: Float ) {
+    var inch = cm_length * 0.393701
+    var yards = cm_length * 0.010936
+    var ft = cm_length * 0.032808
+    
+    return (inch, yards, ft)
+}
+
+var lengthTuple = lengthConverter(cm_length: 20)
+println(lengthTuple.inch)
+println(lengthTuple.yards)
+println(lengthTuple.ft)
+
+
+func displayStrings (strings: String...) {
+    for string in strings {
+        println (string)
+    }
+}
+
+displayStrings("one", "two", "three", "four")
+
+
+//매개 변수가상수가 아니라변수인경우
+
+func calculateArea ( var length: Float, var width: Float ) -> Float {
+    length = length * 2.54
+    width = width * 2.54
+    return length * width
+}
+
+println(calculateArea(20,20))
+
+//inout 매개변수
+var myValue = 20
+func sqrtValue (inout value: Int) -> Int {
+    value *= value
+    return (value)
+}
+
+println(" sqrt \(sqrtValue(&myValue))")
+/* sqrt400 */
+println(myValue)
+/* 400 */
+
+
+//함수 포인터와 비슷한 함수 매개 변수
+
+func inchesToFeet ( inches: Float ) -> Float {
+    return inches * 0.0833333
+}
+
+let toFeet = inchesToFeet
+
+var result = toFeet(20)
+
+
+func inchesToFeet ( inches: Float ) -> Float {
+    return inches * 0.0833333
+}
+
+func inchesToYards ( inches: Float ) -> Float {
+    return inches * 0.0277778
+}
+
+let toFeet = inchesToFeet
+let toYards = inchesToYards
+
+func outputConversion(converterFunc: (Float) -> Float, value:Float ) {
+    var result = converterFunc(value)
+    println ("Result of conversion is \(result)")
+}
+
+outputConversion(toFeet,10)
+outputConversion(toYards,20)
+
+
+//함수가 반환되는 함수
+func decideFunction (feet: Bool) -> (Float) -> Float {
+    if  feet {
+        return toFeet
+    } else {
+        return toYards
+    }
+}
+
+// closure , closure expression
+// 독립적 코드 블럭
+
+let sayHello = { println("hello") }
+sayHello()
+
+let multiply = {(value1:  Int, value2: Int) -> Int in
+    return value1 * value2
+}
+
+let result = multiply( 10, 20)
+
+
+
 
 
 
