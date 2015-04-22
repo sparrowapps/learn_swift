@@ -351,6 +351,143 @@ let multiply = {(value1:  Int, value2: Int) -> Int in
 
 let result = multiply( 10, 20)
 
+/* 스위프트 클래스 */
+
+class Rectangle {
+    var width: Float = 0 //속성
+    var height: Float = 0
+    
+    func displayRectangle() { // 인스턴스 메서드
+        println("width \(width)")
+        println("height \(height)")
+    }
+    
+    class func getMaxHeigh() -> Float { //타입 메서드 (c++ static 함수 , objective-C + 메서드
+        return 1000.00
+    }
+    
+}
+
+var rect: Rectangle = Rectangle() //클래스 인스턴스 생성
+
+
+// init 메서드
+class Rectangle {
+    var width: Float = 0 //속성
+    var height: Float = 0
+    
+    init(widthvalue: Float, heightvalue: Float) { //초기화  init 메서드
+        width = widthvalue
+        height = heightvalue
+    }
+    
+    func displayRectangle() { // 인스턴스 메서드
+        println("width \(width)")
+        println("height \(height)")
+    }
+    
+    class func getMaxHeigh() -> Float { //타입 메서드 (c++ static 함수 , objective-C + 메서드
+        return 1000.00
+    }
+    
+}
+
+var rect = Rectangle(widthvalue: 20, heightvalue: 20)
+
+
+//속성 접근 메서드 호출
+class Rectangle {
+    var width: Float = 0 //속성
+    var height: Float = 0
+    
+    init(widthvalue: Float, heightvalue: Float) { //초기화  init 메서드
+        width = widthvalue
+        height = heightvalue
+    }
+    
+    deinit {
+        //정리 코드
+    }
+    
+    func displayRectangle() { // 인스턴스 메서드
+        println("Width is \(width)")
+        println("Height is \(height)")
+    }
+    
+    class func getMaxHeigh() -> Float { //타입 메서드 (c++ static 함수 , objective-C + 메서드
+        return 1000.00
+    }
+    
+}
+
+var rect = Rectangle(widthvalue: 20, heightvalue: 20)
+
+//도트 표기법으로 얻기
+var width = rect.width
+var height = rect.height
+
+//도트 표기법으로 설정
+rect.width = 30
+rect.height = 40
+
+rect.displayRectangle() // 인스턴스 메서드 호출
+Rectangle.getMaxHeigh() // 타입 메서드 호출
+
+
+
+// getter, setter 계산된 속성
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+class Rectangle {
+    var width: Float = 0 //속성
+    var height: Float = 0
+    
+    var areasize : Float { // 넓이 계산된 속성
+        get {
+            return width * height
+        }
+        
+        set(newsize) {
+            // x * x = newsize
+            width = sqrt(newsize)
+            height = sqrt(newsize)
+            
+        }
+    }
+    
+    init(widthvalue: Float, heightvalue: Float) { //초기화  init 메서드
+        width = widthvalue
+        height = heightvalue
+    }
+    
+    deinit {
+        //정리 코드
+    }
+    
+    func displayRectangle() { // 인스턴스 메서드
+        println("Width is \(width)")
+        println("Height is \(height)")
+    }
+    
+    class func getMaxHeigh() -> Float { //타입 메서드 (c++ static 함수 , objective-C + 메서드
+        return 1000.00
+    }
+    
+}
+
+var rect = Rectangle(widthvalue: 20, heightvalue: 20)
+
+
+rect.areasize = 100; // 넓이를 세팅 하면 width, height 설정된다.
+println(rect.height)
+println(rect.width)
+
+
+
+
+
 
 
 
