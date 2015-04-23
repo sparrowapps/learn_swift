@@ -474,9 +474,11 @@ class Rectangle {
     class func getMaxHeigh() -> Float { //타입 메서드 (c++ static 함수 , objective-C + 메서드
         return 1000.00
     }
+    
 }
 
 var rect = Rectangle(widthvalue: 20, heightvalue: 20)
+
 
 rect.areasize = 100; // 넓이를 세팅 하면 width, height 설정된다.
 println(rect.height)
