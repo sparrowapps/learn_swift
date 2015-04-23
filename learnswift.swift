@@ -504,9 +504,42 @@ println(rect.width)
 
 */
 
+/* 클래스 상속 */
 
+class BankAccount {
+    var accountBalance: Float
+    var accountNumber: Int
+    
+    init (number: Int , balance: Float) {
+        accountBalance = balance
+        accountNumber = number
+    }
+    
+    func displayBalance(){
+        println("Number \(accountNumber)")
+        println("Current balance is \(accountBalance)")
+    }
+    
+}
 
-
+class SavingAccount: BankAccount { //<-- BankAccount 상속
+    var interestRate: Float
+    
+    init(number: Int, balance: Float, rate: Float) { //<-- init 메서드
+        interestRate = rate
+        super.init(number: number, balance: balance) //<-- 부모 클래스의 init호출
+    }
+    
+    func calculateInterest() -> Float {
+        return interestRate * accountBalance
+    }
+    
+    override func displayBalance() {  //<-- 메서드 오버라이딩
+        super.displayBalance() //<--부모 클래스의 메서드 호출
+        println("Prievailing interest rate is \(interestRate)")
+    }
+    
+}
 
 
 
