@@ -541,7 +541,45 @@ class SavingAccount: BankAccount { //<-- BankAccount 상속
     
 }
 
+/* 스위프트 배열*/
 
+/* var 변수이름: [타입] = [값1, 값2, 값3 .....] */
+var treeArray = ["sparrow", "iso", "developer"] //타입유추
+var treeArray: [String] = ["sparrow", "iso", "developer"] //명시적타입설정
+
+//빈 배열
+// var 변수이름 = [타입]()
+
+var nameArray = [String]() // 빈 배열
+
+var nameArray  = [String](count:10, repeatedValue:"sparrow") // 10개의 sparrow로 초기화된 배열
+
+var jobArray = [String](count:10, repeatedValue:"programer")
+
+var namejobArray = nameArray + jobArray // 배열 합치기
+
+var itemCount = nameArray.count // 배열 항목 개수 얻기
+
+if jobArray.isEmpty { // 빈배열 확인
+    //배열이 비어 있다.
+}
+
+println(nameArray[2]) // 특정인덱스 엑세스
+
+jobArray[2] = "sparrow" //특정인덱스 할당
+
+nameArray.append("sparrowapps") //배열에 항목 추가
+
+nameArray.insert("choijunho", atIndex:2) //삽입
+
+nameArray.removeAtIndex(2) //삭제
+
+nameArray.removeLast() //마지막 삭제
+
+
+for name in nameArray {
+    println(name)
+}
 
 
 
