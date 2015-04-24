@@ -581,9 +581,32 @@ for name in nameArray {
     println(name)
 }
 
+/* 스위프트 딕셔너리 
+오브젝티브 C의 딕셔너리와 사용방법이 거의 유사하다.
+키, 밸류 로 이루어진 쌍의 데이터를 저장하고 관리 할수 있다. 
 
+*/
 
+var 변수이름: [키타입: 값타입] = [키1, 값1, 키2, 값2 .... ]
 
+var myDictionary = [Int: String]() // 정수형 키와 문자열 값을 저장하는 빈 딕셔너리
+
+var myDictionary = [String: String] = ["int" : "Int",
+    "float" : "Float",
+    "char" : "Char"      ]
+
+myDictionary.count // 딕셔너리 개수
+
+myDictionary["int"] //딕셔너리 접근
+
+myDictionary["char"] = " sparrow " // 딕셔너리 값변경
+
+//딕셔너리변수[키 = 값 새로운 키-값 추가
+myDictionary.removeValueForKey("int") //제거
+
+for (key, value ) in myDictionary {
+    println("Key: \(key) Value:\(value)")
+}
 
 
 
