@@ -610,3 +610,73 @@ for (key, value ) in myDictionary {
 
 
 
+/* 클래스 구조체 그리고 enum 
+
+차이점
+상속 : class only
+캐스팅  : class only
+vlaue type ( struct, enum ) vs. reference type (class)
+
+
+choosion which to use ?
+struct 는 좀더 기본 타입 일때 
+더많은 기능이 필요 하면 class
+
+분리된 데이터에 대해서는 enum을 이용한다
+
+스위프트에서는 struct와 enum이 너무 많은 기능을 가지고 있다.
+
+*/
+
+enum EnumeNormal {
+    case A
+    case B, C, D
+    case E, F
+}
+
+var samp = EnumeNormal.A
+
+//type 을가진 enum
+
+enum EnumType: Int {
+    case type1  = 0
+    case type2, type3, type4
+}
+
+//메서드를가진 enum
+
+enum EnumMethod: Int {
+    case type1 = 0
+    case type2, type3, type4
+    
+    func str() -> String {
+        switch self {
+        case .type1:
+            return "type1"
+        case .type2:
+            return "type2"
+        case .type3:
+            return "type3"
+        case .type4:
+            return "type4"
+
+        }
+    }
+}
+
+
+// 값을 가진 Enum
+
+enum EnumValue {
+    case type1(String, String)
+    case type2(Int)
+}
+
+var samp = EnumValue.type1("sparrow", "developer")
+
+switch samp {
+    case .type1(let a, let b):
+        println ("\(a) \(b)")
+    case .type2(let a):
+        println("\(a)")
+}
