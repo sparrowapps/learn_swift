@@ -27,8 +27,6 @@ if,for 문 괄호 하지 않는다.
 
 문자열의 변수 출력 \(변수)
 "value is \(i)"
-
-
 */
 
 
@@ -51,12 +49,10 @@ println (n)
 println("nil")
 }
 
-
 선언 시에 ?
 참조 할때 ! (unwrapping )
 새로운 상수를 만들어 할당 하고 상수로 참조 (unwrapping)
 암묵적인 언래핑을 위해 선언시 ! : 이러한 경우는 언제 사용하는지 모르겠음 안전성이 사라짐
-
 */
 
 import UIKit
@@ -87,13 +83,11 @@ var myString = myTuple.2
 let (myInt, myFloat, myString) = myTuple
 
 // 무시
-
 var ( myInt, _, myString) = myTuple
 
 let myTuple = ( count: 10, length : 11.33, message : "string" )
 
 println (myTuple.message)
-
 
 /*
 범위 연산자
@@ -104,13 +98,11 @@ x에서 시작하여 y로 끝나는 범위
 x ... <y
 x로부터 y가 포함되지 않는 모든 숫자
 
-
 */
 var x =  10
 for index in 1 ... 20 {
     let y = index * x--
 }
-
 
 /* 
 반복문, 제어문
@@ -119,7 +111,6 @@ for in 사용
 do ~ while, while은 c/c++ object-c와 유사
 if c/c++,object-c와 유사
 */
-
 
 import UIKit
 
@@ -134,7 +125,6 @@ Value of index is 3
 Value of index is 4
 Value of index is 5
 */
-
 
 for char in "sparrow is ios developer" {
     println(char)
@@ -167,7 +157,6 @@ r
 
 */
 
-
 var count = 0
 
 for _ in "sparrow" {
@@ -176,8 +165,6 @@ for _ in "sparrow" {
 /*
 7
 */
-
-
 
 /* 
 switch
@@ -266,7 +253,6 @@ println(lengthTuple.inch)
 println(lengthTuple.yards)
 println(lengthTuple.ft)
 
-
 func displayStrings (strings: String...) {
     for string in strings {
         println (string)
@@ -274,7 +260,6 @@ func displayStrings (strings: String...) {
 }
 
 displayStrings("one", "two", "three", "four")
-
 
 //매개 변수가상수가 아니라변수인경우
 
@@ -298,9 +283,7 @@ println(" sqrt \(sqrtValue(&myValue))")
 println(myValue)
 /* 400 */
 
-
 //함수 포인터와 비슷한 함수 매개 변수
-
 func inchesToFeet ( inches: Float ) -> Float {
     return inches * 0.0833333
 }
@@ -308,7 +291,6 @@ func inchesToFeet ( inches: Float ) -> Float {
 let toFeet = inchesToFeet
 
 var result = toFeet(20)
-
 
 func inchesToFeet ( inches: Float ) -> Float {
     return inches * 0.0833333
@@ -328,7 +310,6 @@ func outputConversion(converterFunc: (Float) -> Float, value:Float ) {
 
 outputConversion(toFeet,10)
 outputConversion(toYards,20)
-
 
 //함수가 반환되는 함수
 func decideFunction (feet: Bool) -> (Float) -> Float {
@@ -352,7 +333,6 @@ let multiply = {(value1:  Int, value2: Int) -> Int in
 let result = multiply( 10, 20)
 
 /* 스위프트 클래스 */
-
 class Rectangle {
     var width: Float = 0 //속성
     var height: Float = 0
@@ -369,7 +349,6 @@ class Rectangle {
 }
 
 var rect: Rectangle = Rectangle() //클래스 인스턴스 생성
-
 
 // init 메서드
 class Rectangle {
@@ -394,7 +373,6 @@ class Rectangle {
 
 var rect = Rectangle(widthvalue: 20, heightvalue: 20)
 
-
 //속성 접근 메서드 호출
 class Rectangle {
     var width: Float = 0 //속성
@@ -417,7 +395,6 @@ class Rectangle {
     class func getMaxHeigh() -> Float { //타입 메서드 (c++ static 함수 , objective-C + 메서드
         return 1000.00
     }
-    
 }
 
 var rect = Rectangle(widthvalue: 20, heightvalue: 20)
@@ -432,8 +409,6 @@ rect.height = 40
 
 rect.displayRectangle() // 인스턴스 메서드 호출
 Rectangle.getMaxHeigh() // 타입 메서드 호출
-
-
 
 // getter, setter 계산된 속성
 //: Playground - noun: a place where people can play
@@ -453,7 +428,6 @@ class Rectangle {
             // x * x = newsize
             width = sqrt(newsize)
             height = sqrt(newsize)
-            
         }
     }
     
@@ -479,7 +453,6 @@ class Rectangle {
 
 var rect = Rectangle(widthvalue: 20, heightvalue: 20)
 
-
 rect.areasize = 100; // 넓이를 세팅 하면 width, height 설정된다.
 println(rect.height)
 println(rect.width)
@@ -501,11 +474,9 @@ println(rect.width)
 런타임에 타입을 확인 하고 변화 가능 하다. 
 해제 deinit 으로 인스턴스가 할당된 자원을 환원 가능케 한다. 
 참조카운팅은 하나의 클래스 인스턴스를 한번 이상 참조 하는 것을 가능하게 한다.
-
 */
 
 /* 클래스 상속 */
-
 class BankAccount {
     var accountBalance: Float
     var accountNumber: Int
@@ -519,7 +490,6 @@ class BankAccount {
         println("Number \(accountNumber)")
         println("Current balance is \(accountBalance)")
     }
-    
 }
 
 class SavingAccount: BankAccount { //<-- BankAccount 상속
@@ -576,7 +546,6 @@ nameArray.removeAtIndex(2) //삭제
 
 nameArray.removeLast() //마지막 삭제
 
-
 for name in nameArray {
     println(name)
 }
@@ -587,7 +556,7 @@ for name in nameArray {
 
 */
 
-var 변수이름: [키타입: 값타입] = [키1, 값1, 키2, 값2 .... ]
+//var 변수이름: [키타입: 값타입] = [키1, 값1, 키2, 값2 .... ]
 
 var myDictionary = [Int: String]() // 정수형 키와 문자열 값을 저장하는 빈 딕셔너리
 
@@ -608,10 +577,7 @@ for (key, value ) in myDictionary {
     println("Key: \(key) Value:\(value)")
 }
 
-
-
 /* 클래스 구조체 그리고 enum 
-
 차이점
 상속 : class only
 캐스팅  : class only
@@ -664,9 +630,7 @@ enum EnumMethod: Int {
     }
 }
 
-
 // 값을 가진 Enum
-
 enum EnumValue {
     case type1(String, String)
     case type2(Int)
@@ -680,8 +644,6 @@ switch samp {
     case .type2(let a):
         println("\(a)")
 }
-
-
 
 /* Nested Types */
 /*
@@ -731,6 +693,3 @@ struct BlackjackCard {
 let heartSymbol = BlackjackCard.Suit.Hearts.rawValue
 println("\(heartSymbol)")
 /*결과 ♡ */
-
-
-
