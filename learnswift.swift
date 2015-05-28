@@ -693,3 +693,45 @@ struct BlackjackCard {
 let heartSymbol = BlackjackCard.Suit.Hearts.rawValue
 println("\(heartSymbol)")
 /*결과 ♡ */
+
+/*프로토콜*/
+//프로토콜은 클래스, 구조체, 열거형 와 매우 비슷한 방법으로 정의한다.클래스
+protocol SomeProtocol {
+    // 프로토콜 정의
+}
+
+//타입을 정의하는 곳에서 타입의 뒤에 콜롤 으로 구분해서 프로토콜의 이름을 써서 프로토콜을 커스텀
+//타입에 적용시킨다.클래스
+struct SomeStructure: FirstProtocol, SecondProtocol {
+// 구조체 정의
+}
+
+//클래스가 부모를 가질때는 프로토콜들 앞에 부모 클래스를 명시하고 쉼표로 구분해서 적용한다. 
+class SomeClass : SomeSuperClass, FirstProtocol, SecondProtocol {
+    // 클래스 정의
+}
+
+protocol SomeProtocol {
+    var mustBeSettable: Int { get set }
+    var doesNotNeedToBeSettable : Int { get }
+}
+
+protocol SecondProtocol {
+    class var someTypeProperty : Int {
+        get set
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
