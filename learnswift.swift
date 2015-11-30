@@ -37,7 +37,7 @@ if,for 문 괄호 하지 않는다.
 일반 적인 변수는 nil을 할당 할수 조차 없다.
 
 하지만 어떠한 함수에서 nil을 리턴 할수 도 있다.
-해서 옵셔널 타입으로 변수를 선언 하고 nil을 할당 할수 잇도록 한다.
+해서 옵셔널 타입으로 변수를 선언 하고 nil을 할당할 수 있도록 한다.
 이러한 변수의 값이 nil인 경우와 아닌경우를 구분하여 처리 해야 하는 코드를 swift에서는
 
 var strNum: String? = "1234"
@@ -310,6 +310,38 @@ func outputConversion(converterFunc: (Float) -> Float, value:Float ) {
 
 outputConversion(toFeet,10)
 outputConversion(toYards,20)
+
+standford ituneU 에 예제
+함수 performOperation는 인자 double, double 를 받고 리턴 double인 함수를 인자로 받는다.
+그러한 함수 multiply를 선언 한다.
+case "×": performOperation(multiply) 으로 호출 하여 기능이 구현된다.
+
+    @IBAction func operate(sender: UIButton) {
+        let operation = sender.currentTitle!
+        if userIsInTheMiddleOfTypingANumber {
+            enter()
+        }
+        switch operation {
+        case "×": performOperation(multiply)
+//            case "÷":
+//            case "+":
+//            case "-":
+        default: break
+        }
+    }
+    
+    func performOperation(operation: (Double, Double) -> Double) {
+        if operandStack.count >= 2 {
+            displayValue = operation(operandStack.removeLast(), operandStack.removeLast())
+            enter()
+        }
+    }
+    
+    func multiply(op1: Double, op2: Double) -> Double {
+        return op1 * op2
+    }
+
+
 
 //함수가 반환되는 함수
 func decideFunction (feet: Bool) -> (Float) -> Float {
