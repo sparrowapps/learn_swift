@@ -1,14 +1,13 @@
 #switch
 
-switch enum {
-  case .enum1:
-    execution code 
-  case .enum2:
-      execution code 
-  case .enum3:
-      execution code 
+switch some value to consider {
+case value 1:
+    respond to value 1
+case value 2,
+value 3:
+    respond to value 2 or 3
 default:
-  break
+    otherwise, do something else
 }
 
 swift switch case에서는 기본적으로  break를 쓰지 않는다.
