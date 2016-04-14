@@ -1,0 +1,19 @@
+swift 2.0 to 2.2 
+
+1. action: selector 변경
+let keypadDoneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "pointDoneClick")
+to
+let keypadDoneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(PaymentViewController.pointDoneClick))
+
+
+2. C style for statement
+for (var i=0; i < payButtons.count ; i++ ) {
+            payButtons[i].enabled = enabled
+}
+
+to
+
+for i in 0 ..< payButtons.count {
+            payButtons[i].enabled = enabled
+}
+
