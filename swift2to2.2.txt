@@ -17,3 +17,13 @@ for i in 0 ..< payButtons.count {
             payButtons[i].enabled = enabled
 }
 
+
+컴파일후 많은 워닝이 발생 하면 다음과 같은 단축키를 이용해서 처리 할 수 있다.
+
+xcode short cut
+
+cmd + ' : next issue
+cmd + " : previous issue
+
+ctrl + cmd + ' : next issue fix
+ctrl + cmd + " : previous issue fix
