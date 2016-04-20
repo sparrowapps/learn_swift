@@ -1,0 +1,50 @@
+func function() {
+  print("function")
+}
+
+func numberprint(num: Int) {
+  print(num)
+}
+
+함수 매개 변수명 (오브젝티브 C의 named parameter)
+
+func add(num1: Int, secondNum num2: Int) -> Int {
+  return num1 + num2
+}
+
+print(add(5, secondNum:6))
+
+func add( first num1: Int, secondNum num2: Int) -> Int {
+...
+}
+
+외부 매개변수 축약 
+func add(#num1: Int, #num2: Int) -> Int {
+  return num1 + num2
+}
+
+print(add(num1:5, num2:6))
+
+가변매개 변수 
+func average(nums: Int...) -> Float {
+  var sum : Float = 0
+  for num in nums {
+    sum += Float(num)
+  }
+  return sum/Float(nums.count)
+}
+
+in-out 매개변수
+inout 키워드를 함수 파라메터 앞에 붙인다.
+
+함수 타입
+() -> () 
+(Int, Int) -> Int
+
+함수 타입을 반환 하는 함수
+func function(c: Int) -> (Int, Int) -> Int {
+}
+
+중첩함수
+함수 안에서 함수를 정의 
+
