@@ -1,4 +1,4 @@
-#clouser
+#Closures
 
 import UIKit
 
